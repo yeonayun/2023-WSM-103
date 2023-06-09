@@ -19,6 +19,45 @@
     <!-- <meta charset="UTF-8"> -->
     <!-- 제목 -->
     <title>나를 소개합니다 </title>
+
+    <style>
+        
+        h2{ 
+            /*
+            글자색을 파란색으로
+            속성명과 속성값 사이에는 콜론(;)으로
+            */
+            color:blue;
+        }
+        #hobby{
+            color:blueviolet;
+        }
+        #favorite{
+            color:yellow;
+        }
+        .hobby, .food{
+            color:tomato;
+        }
+        /* .food{
+            color:tomato;
+        } */
+
+        table {
+            /* 셀 사이의 경계를 한 줄로 */
+            border-collapse: collapse;
+            /* 수평적 가운데 배치 */
+            margin: auto;
+        }
+
+        td, th {
+            /* 경계선 */
+            border: 1px solid black;
+            padding: 10px;
+            /* 글자 가운데 정렬 */
+            text-align: center;
+        }
+
+    </style>
     
 </head>
 <!-- 실제 홈페이지 내용이 들어가는 태그 -->
@@ -30,23 +69,54 @@
     <!-- 그림 불러오기 src:불러올 파일, alt:그림 불러오기를 실패했을때 대체되는 문자-->
     <!--src, alt과 같은 속성은 태그의 세부적인 정보를 제공한다-->
     <img src="341156761_1814131985635174_1053542620040334444_n.jpg" alt="그림 불러오기 실패">
-    <h2>정보</h2>
+
+    <h2 id="hobby">정보</h2>
 
     <!-- 순서가 없는 목록(Unordered list)-->
-    <ul>    
+    <ul id="hobby1">    
         <!-- 목록 (list) <li>는 <ol>혹은 <ul>과 같이 사용한다-->
-        <li>미림여자정보과학고등학교</li>
-        <li>1학년3반2번</li>
-        <li>기숙사 407호</li>
-        <li>배곧 신도시 호반2차 905동 1004호</li>
+        <li class="hobby">미림여자정보과학고등학교</li>
+        <li class="hobby">1학년3반2번</li>
+        <li class="hobby">기숙사 407호</li>
+        <li class="hobby">배곧 신도시 호반2차 905동 1004호</li>
     </ul>
     
-    <h2>좋아하는 음식 순위</h2>
+    <h2 id="favorite">좋아하는 음식 순위</h2>
     <!--순서가 있는 목록(Ordered List)-->
     <ol>
-    <li>마라탕</li>
-    <li>떡볶이</li>
+    <li class="food">마라탕</li>
+    <li class="food">떡볶이</li>
     </ol>
+
+    <!-- 행<tr>을 먼저 만들고 열<th>,<td>을 만든다 -->
+    <table>
+        <!-- 1행 -->
+        <tr>
+            <!-- <th> 본문을 설정해주는 셀 -->
+                <th>이름</th>
+                <th>주소</th>
+                <th>종류</th>
+      </tr>
+      <!-- 2행 -->
+      <tr>
+        <!-- <td> 본문(내용물)에 해당하는 셀-->
+        <td>네이버</td>
+        <td>www.naver.com</td>
+        <td  rowspan="2">포탈</td>
+      </tr>
+      <!-- 3행 -->
+      <tr>
+        <td>다음</td>
+        <td>www.daum.net</td>
+       
+      </tr>
+      <!-- 4행 -->
+      <tr>
+        <td>나무위키</td>
+        <td>https://namu.wiki</td>
+        <td>위키백과</td>
+      </tr>
+    </table>
 
     <h2>내가 자주가는 사이트</h2>
     <ul>
