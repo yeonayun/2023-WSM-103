@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> 계산기 </title>
+    <style>
+        body{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .calculator{
+            /* 배경색 */
+            background-color: #6b6e6f7c;
+            padding: 25px;
+            /* margin: auto; */
+            border: 1px solid hsla(0, 15%, 10%, 0.011);
+            box-shadow: 0 15px 5px rgba(39, 37, 37, 0.508);
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        #result{
+            /* 부모의 width의 100% */
+            width: 100%;
+            height: 30px;
+            font-size: 24px;
+            border: none;
+           /* box-shadow: 0 2px 5px black inset; */ 
+           border-radius: 5px;
+        }
+        /* 어려운 개념 시험엔 안낼듯 */
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+        button{
+            padding: 10px;
+            font-size: 24px;
+            border: 0.5px black solid;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgba(255, 255, 255, 0);
+            color:rgb(255, 255, 255);
+        }
+        .clear{
+            background-color: rgba(104, 102, 102, 0.644);
+            color:rgb(6, 6, 6)
+        }
+        .operator{
+
+        }
+        .number, .decimal{
+
+        }
+        .equals{
+
+        }
+    </style>
+</head>
+<body>
+    <div class = "calculator">
+        <input type = "text" id = "result">
+        <div class = "buttons">
+            <button class = "clear">C</button>
+            <button class = "operator">/</button>
+            <button class = "operator">*</button>
+            <button class = "operator">-</button>
+            <button class = "number">7</button>
+            <button class = "number">8</button>
+            <button class = "number">9</button>
+            <button class = "operator">+</button>
+            <button class = "number">4</button>
+            <button class = "number">5</button>
+            <button class = "number">6</button>
+            <button class = "equals">=</button>
+            <button class = "number">1</button>
+            <button class = "number">2</button>
+            <button class = "number">3</button>
+            <button class = "number">0</button>
+            <button class = "decimal">.</button>
+        </div>
+    </div>
+    <script>
+        const buttonsEl = document.querySelectorAll("button");
+
+const inputFieldEl = document.getElementById("result");
+
+for (let i = 0; i < buttonsEl.length; i++) {
+  buttonsEl[i].addEventListener("click", () => {
+    const buttonValue = buttonsEl[i].textContent;
+    if (buttonValue === "C") {
+      clearResult();
+    } else if (buttonValue === "=") {
+      calculateResult();
+    } else {
+      appendValue(buttonValue);
+    }
+  });
+}
+
+function clearResult() {
+  inputFieldEl.value = "";
+}
+
+function calculateResult() {
+  inputFieldEl.value = eval(inputFieldEl.value);
+}
+
+function appendValue(buttonValue) {
+  inputFieldEl.value += buttonValue;
+  //   inputFieldEl.value = inputFieldEl.value + buttonValue;
+}
+    </script>
+</body>
+</html>
